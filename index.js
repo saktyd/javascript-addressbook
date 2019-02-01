@@ -33,5 +33,14 @@ function add_address_book(name, address, noHp) {
 function delete_Address_book(noID) {
   let someuser = address_book.filter(item => item.id !== noID);
   address_book = someuser;
-  return address_book;
+  displayAddressBook();
+}
+
+function displayAddressBook() {
+  address_book.forEach(addres => {
+    const contacs = `ID: ${addres.id} , ${addres.name} , ${addres.address} (${
+      addres.noHp
+    })`;
+    console.log(contacs);
+  });
 }
